@@ -10,11 +10,11 @@
           <label for="nouvelle-tache">Nouvelle tache</label>
         </div>
         <div class="input-field col s4">
-          <input id="heures" type="text" class="validate" v-model="newTask.heures">
+          <input id="heures" type="number" class="validate" v-model="newTask.heures">
           <label for="heures">N° d'heures</label>
         </div>
         <div class="input-field col s4">
-          <input id="note" type="text" class="validate" v-model="newTask.note">
+          <input id="note" type="number" class="validate" v-model="newTask.note">
           <label for="note">Note</label>
         </div>
       </div>

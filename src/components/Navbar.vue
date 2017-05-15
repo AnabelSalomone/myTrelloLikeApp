@@ -31,8 +31,11 @@ export default {
 
   methods: {
     seenTask: function(){
+      if(Store.datas.newTask === true){
         Store.datas.newTask = false;
+        Materialize.toast('Nouvelle tache: vue!', 2000)
           }
+        }
       },
   computed: {
     totalHours: function(){
