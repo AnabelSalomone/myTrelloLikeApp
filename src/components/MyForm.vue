@@ -2,7 +2,6 @@
 <div>
 
 <div class="row">
-{{msg}}
     <form class="col s12">
       <div class="row">
         <div class="input-field col s4">
@@ -35,7 +34,6 @@ export default {
 
 	data(){
     return {
-			msg: 'coucou',
 			datas: Store.datas,
       newTask: {
 				titre: '',
@@ -48,9 +46,6 @@ export default {
 
 	
 	created() {
-	console.log("Estoy aca: created de MyForm. La respuesta de Bus esta aca");
-  console.log("array de tareas suprimidas: " + this.datas.tachesSup);
-
     Bus.$on('three', function(){
 			console.log("Entre al bus");
       if(Store.datas.tachesSup === 3){

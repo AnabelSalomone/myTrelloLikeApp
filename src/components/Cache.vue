@@ -1,8 +1,9 @@
 <template>
 <div>
 <div class="row">
+HIDDEN HERE 
 <div v-for="item in tasks.taches">
-<div v-if="item.visibilite === true">
+<div v-if="item.visibilite === false">
       <div class="col s12 m3">
         <div class="card blue-grey darken-1">
 				<div class="card-content white-text">
@@ -14,7 +15,7 @@
         </div>
 				<div class="card-action">
 					<button class="btn" @click="deleteTask(item)" type="button"> Eliminer</button> 
-          <button class="btn" @click="cacher(item)" type="button"> Cacher</button> 
+          <button class="btn" @click="montrer(item)" type="button"> Montrer</button> 
           </div>
 						</div>
     </div>
@@ -30,7 +31,7 @@ import {Bus} from '@/Bus.js'
 
 
 export default {
-  name: 'taches',
+  name: 'cache',
   data(){
     return {
       tasks: Store.datas
@@ -45,11 +46,9 @@ export default {
 		 this.three();
 		},
 
-    cacher: function(item){
+    montrer: function(item){
       let position = this.tasks.taches.indexOf(item);
-      console.log(Store.datas.taches[2]);
-      console.log("cacher: " + position);
-      Store.datas.taches[position].visibilite = false;
+      Store.datas.taches[position].visibilite = true;
     },
 
 	  three: function(){

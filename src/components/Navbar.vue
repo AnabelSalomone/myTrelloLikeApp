@@ -1,6 +1,6 @@
 <template>
 <div>
-<nav>
+<nav :class="{'red': datas.taches.length < 2, 'teal': datas.taches.length > 1}">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">My Trello-like</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -8,7 +8,7 @@
         <li><a>{{datas.taches.length}} taches en cours</a></li>
         <li><a>{{totalHours}} hours remaining</a></li>
         <li><a>{{averageHours}} heures en moyenne</a></li>
-        <li><a href="#">Taches</a></li>
+        <li><router-link to="/hidden">Taches cachées</router-link></li>
         <li><a href="#" class="btn btn-floating" :class="{'pulse' : datas.newTask}" @click="seenTask"><i class="material-icons">add_alert</i></a></li>
       </ul>
     </div>
@@ -43,7 +43,7 @@ export default {
       for (let item of this.datas.taches){
         final += parseInt(item.heures);
       }
-      return final
+      return Math.round(final);
     },
 
     averageHours: function(){
@@ -51,7 +51,7 @@ export default {
       for (let item of this.datas.taches){
         moyenne += parseInt(item.heures);
       }
-      return moyenne / this.datas.taches.length
+      return Math.round(moyenne / this.datas.taches.length);
     }
 
   } // ferme computed
