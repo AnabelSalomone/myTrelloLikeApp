@@ -1,4 +1,13 @@
 export const Store = {
+	// state: {
+	// 	tachesSup
+	// },
+
+	// mutations: {
+	// 	increment(state, value) {
+	// 		state.tachesSup += value;
+	// 	}
+	// },
 
 	datas: {
 		taches: [
@@ -32,8 +41,8 @@ export const Store = {
 				heures: 7,
 				visibilite: true
 			}
-		]
+		],
+		tachesSup: 0,
+		newTask: false
 	}
-
-
 };
