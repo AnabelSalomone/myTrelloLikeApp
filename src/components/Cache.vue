@@ -14,8 +14,9 @@
     </li>
     </div>
 			<div class="col s1">
-     <a class="tooltipped" @click="deleteTask(item)" data-tooltip="Delete this task"><i class="tiny material-icons">delete</i></a>
-		 <a class="tooltipped" @click="cacher(item)" data-tooltip="Mark as 'important'"><i class="tiny material-icons">remove_red_eye</i></a>
+     <a class="tooltipped" @click="deleteTask(item)" data-tooltip="Delete this task"><i class="petite material-icons">delete</i></a>
+		 <a class="tooltipped" @click="importantProp(item)" data-tooltip="Mark as 'important'" v-if="item.important===false"><i class="petite material-icons">error</i></a>
+     <a class="tooltipped" @click="importantProp(item)" data-tooltip="Mark as 'normal'" v-if="item.important===true"><i class="petite material-icons">remove_red_eye</i></a>
     </div>
 		</ul>
 </div> 
@@ -42,16 +43,22 @@ computed: {
     }
   },
 	methods: {
-	  deleteTask: function (item) {
-			let position = this.tasks.taches.indexOf(item);
-      this.tasks.taches.splice(position, 1);
+	 deleteTask: function (item) {
+			let position = this.tasks.indexOf(item);
+      this.tasks.splice(position, 1);
+			console.log(position);
       Store.datas.tachesSup += 1;
+			console.log( Store.datas.tachesSup );
 		 this.three();
 		},
 
-    montrer: function(item){
-      let position = this.tasks.taches.indexOf(item);
-      Store.datas.taches[position].important = true;
+    importantProp: function(item){
+      let position = this.tasks.indexOf(item);
+      if (item.important===false){
+         return Store.datas.taches[position].important = true;
+      } else{
+          return Store.datas.taches[position].important = false;
+      }
     },
 
 	  three: function(){
@@ -68,5 +75,10 @@ computed: {
 
 button{
   display: inline-flex;
+}
+
+a{
+	cursor: pointer;
+  color: #80cbc4;
 }
 </style>
