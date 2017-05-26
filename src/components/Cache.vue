@@ -2,7 +2,7 @@
 <div>
 <div class="row"> 
 <div v-for="item in tasks.taches">
-<div v-if="item.visibilite === false">
+<div v-if="item.important === false">
       <div class="col s12 m3">
         <div class="card blue-grey darken-1">
 				<div class="card-content white-text">
@@ -47,7 +47,7 @@ export default {
 
     montrer: function(item){
       let position = this.tasks.taches.indexOf(item);
-      Store.datas.taches[position].visibilite = true;
+      Store.datas.taches[position].important = true;
     },
 
 	  three: function(){

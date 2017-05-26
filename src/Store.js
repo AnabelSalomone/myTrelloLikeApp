@@ -5,31 +5,31 @@ export const Store = {
 				titre: "Call someone",
 				note: 8,
 				heures: 3,
-				visibilite: true
+				important: true
 			},
 			{
 				titre: "Do something",
 				note: 6,
 				heures: 1,
-				visibilite: true
+				important: true
 			},
 			{
 				titre: "Finish something",
 				note: 3,
 				heures: 4,
-				visibilite: true
+				important: true
 			},
 			{
 				titre: "Start something new",
 				note: 6,
 				heures: 1,
-				visibilite: true
+				important: true
 			},
 			{
 				titre: "Faire lmn 5",
 				note: 9,
 				heures: 7,
-				visibilite: true
+				important: true
 			}
 		],
 		tachesSup: 0,

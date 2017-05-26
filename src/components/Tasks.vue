@@ -2,7 +2,7 @@
 <div>
 <ul class="collection" v-for="item in tasks">
 <div  class="col s11">
-    <li class="collection-item avatar" v-if="item.visibilite === true">
+    <li class="collection-item avatar">
       <img src="" alt="" class="circle">
       <span class="title">{{item.titre}}</span>
       <p>Note: {{item.note}}</p>

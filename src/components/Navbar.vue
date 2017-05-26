@@ -5,7 +5,7 @@
       <a href="#" class="brand-logo">My Trello-like</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>Hi, User! </li>
-        <li class="fix-pad" v-if="mainScreen===true" @click="changeScreen"><router-link to="/hidden">Hidden tasks</router-link></li>
+        <li class="fix-pad" v-if="mainScreen===true" @click="changeScreen"><router-link to="/hidden">Important tasks</router-link></li>
         <li class="fix-pad" v-if="mainScreen===false" @click="changeScreen"><router-link to="/">All tasks</router-link></li>
         <li class="fix-pad"><a href="#" class="btn btn-floating" :class="{'pulse' : datas.newTask, 'red' : datas.newTask}" @click="seenTask"><i class="material-icons">add_alert</i></a></li>
       </ul>
