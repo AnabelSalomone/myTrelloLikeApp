@@ -11,7 +11,7 @@ export const Store = {
 				titre: "Do something",
 				note: 6,
 				heures: 1,
-				important: true
+				important: false
 			},
 			{
 				titre: "Finish something",
@@ -23,13 +23,13 @@ export const Store = {
 				titre: "Start something new",
 				note: 6,
 				heures: 1,
-				important: true
+				important: false
 			},
 			{
 				titre: "Faire lmn 5",
 				note: 9,
 				heures: 7,
-				important: true
+				important: false
 			}
 		],
 		tachesSup: 0,

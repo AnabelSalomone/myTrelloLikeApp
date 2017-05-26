@@ -2,7 +2,7 @@
   <div id="app">
     <navbar></navbar>
     <div class="row">
-    <div class="col s12 m3">
+    <div class="col s12 m3 grey lighten-4 pad-fix">
     <counter></counter>
     <search></search>
      <my-form></my-form>     
@@ -34,5 +34,8 @@ export default {
 </script>
 
 <style>
+.pad-fix{
+  margin-top: 2px;
+}
 
 </style>

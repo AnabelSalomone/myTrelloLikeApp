@@ -2,7 +2,7 @@
 <div>
 <nav :class="{'red': datas.taches.length < 2, 'teal': datas.taches.length > 1}">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">My Trello-like</a>
+      <a href="#" class="brand-logo">Task manager</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>Hi, User! </li>
         <li class="fix-pad" v-if="mainScreen===true" @click="changeScreen"><router-link to="/hidden">Important tasks</router-link></li>
@@ -33,6 +33,8 @@ export default {
       if(Store.datas.newTask === true){
         Store.datas.newTask = false;
         Materialize.toast('You have new task(s)!', 2000)
+          } else{
+        Materialize.toast('You have no new notifications', 2000)
           }
         },
 
@@ -72,5 +74,8 @@ export default {
   padding-right: 10px;
   padding-left: 10px;
   font-size: 10px;
+}
+.brand-logo{
+  margin-left: 50px;
 }
 </style>

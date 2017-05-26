@@ -2,8 +2,9 @@
 <div>
 <h5>Important tasks</h5>
 <div class="row"> 
-<div v-for="item in tasks.taches">
-<ul class="collection" v-for="item in tasks">
+<div v-for="item in tasks">
+<div v-if="item.important===true">
+<ul class="collection">
 <div  class="col s11">
     <li class="collection-item avatar">
       <img src="" alt="" class="circle">
@@ -17,9 +18,9 @@
 		 <a class="tooltipped" @click="cacher(item)" data-tooltip="Mark as 'important'"><i class="tiny material-icons">remove_red_eye</i></a>
     </div>
 		</ul>
-    </div>
-</div>
 </div> 
+</div>
+</div>
 </div>
 </template>
 
@@ -32,10 +33,14 @@ export default {
   name: 'cache',
   data(){
     return {
-      tasks: Store.datas
+     
     }
   },
-
+computed: {
+    tasks(){
+      return Store.search();
+    }
+  },
 	methods: {
 	  deleteTask: function (item) {
 			let position = this.tasks.taches.indexOf(item);
