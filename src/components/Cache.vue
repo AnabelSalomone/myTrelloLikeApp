@@ -1,23 +1,22 @@
 <template>
 <div>
+<h5>Important tasks</h5>
 <div class="row"> 
 <div v-for="item in tasks.taches">
-<div v-if="item.important === false">
-      <div class="col s12 m3">
-        <div class="card blue-grey darken-1">
-				<div class="card-content white-text">
-          <span class="white-text">
-					<p>Tache: {{item.titre}}</p>
-					<p>Note: {{item.note}}</p>
-					<p>Temps: {{item.heures}} heures</p>
-                    </span>
-        </div>
-				<div class="card-action">
-					<button class="btn" @click="deleteTask(item)" type="button"> Eliminer</button> 
-          <button class="btn" @click="montrer(item)" type="button"> Montrer</button> 
-          </div>
-						</div>
+<ul class="collection" v-for="item in tasks">
+<div  class="col s11">
+    <li class="collection-item avatar">
+      <img src="" alt="" class="circle">
+      <span class="title">{{item.titre}}</span>
+      <p>Note: {{item.note}}</p>
+			<p>Time: {{item.heures}} hours</p>
+    </li>
     </div>
+			<div class="col s1">
+     <a class="tooltipped" @click="deleteTask(item)" data-tooltip="Delete this task"><i class="tiny material-icons">delete</i></a>
+		 <a class="tooltipped" @click="cacher(item)" data-tooltip="Mark as 'important'"><i class="tiny material-icons">remove_red_eye</i></a>
+    </div>
+		</ul>
     </div>
 </div>
 </div> 

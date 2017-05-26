@@ -32,7 +32,7 @@ export default {
     seenTask: function(){
       if(Store.datas.newTask === true){
         Store.datas.newTask = false;
-        Materialize.toast('Seen!', 2000)
+        Materialize.toast('You have new task(s)!', 2000)
           }
         },
 

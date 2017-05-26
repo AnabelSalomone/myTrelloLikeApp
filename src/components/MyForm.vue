@@ -16,9 +16,18 @@
           <input id="note" type="number" min="0" class="validate" v-model="newTask.note">
           <label for="note">Note</label>
         </div>
+          <!-- Switch -->
+        <div class="switch">
+          <label>
+            Normal
+          <input type="checkbox" v-model="newTask.important" value="true">
+          <span class="lever"></span>
+            Important!
+          </label>
+        </div>
       </div>
 					 <button class="btn" @click="addTask" type="button">Send</button>   
-					  </form>
+		</form>
  </div>
  </div>
 
@@ -38,7 +47,7 @@ export default {
 				titre: '',
 				note: 0,
 				heures: 0,
-				visibilite: true
+				important: false
 			}
     }
   },
