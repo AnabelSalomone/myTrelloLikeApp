@@ -55,9 +55,8 @@ export default {
 	
 	created() {
     Bus.$on('three', function(){
-			console.log("Entre al bus");
       if(Store.datas.tachesSup === 3){
-      alert("He oh doucement!");
+      alert("Too many tasks deleted!");
 	    	}
     }
     );
@@ -65,11 +64,16 @@ export default {
 
 	methods: {
     addTask: function(){
+     if(this.newTask.titre.length === 0){
+       alert("Please, add a title");
+   } else if (this.newTask.heures === 0){
+     alert("Plase, set a duration");
+   } else{
       this.datas.taches.push(this.newTask);
 			this.newTask = {};
 			Store.datas.newTask = true;
       console.log(Store.datas.newTask);
-
+      } 
     }
   },
 
