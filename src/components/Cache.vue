@@ -7,7 +7,7 @@
 <ul class="collection">
 <div  class="col s11">
     <li class="collection-item avatar">
-      <img src="" alt="" class="circle">
+       <img data-tooltip="Marked as important" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Emblem-important-red.svg/1024px-Emblem-important-red.svg.png" alt="Important" class="circle tooltipped" v-if="item.important===true">
       <span class="title">{{item.titre}}</span>
       <p>Note: {{item.note}}</p>
 			<p>Time: {{item.heures}} hours</p>
