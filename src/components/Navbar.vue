@@ -7,10 +7,7 @@
         <li>Hi, User! </li>
         <li class="fix-pad" v-if="mainScreen===true" @click="changeScreen"><router-link to="/hidden">Hidden tasks</router-link></li>
         <li class="fix-pad" v-if="mainScreen===false" @click="changeScreen"><router-link to="/">All tasks</router-link></li>
-        <li class="fix-pad"><a href="#" class="btn btn-floating" :class="{'pulse' : datas.newTask}" @click="seenTask"><i class="material-icons">add_alert</i></a></li>
-        <li class="tab">{{datas.taches.length}} current tasks</li>
-        <li class="tab">Time remaining: {{totalHours}} hours </li>
-        <li class="tab">Average time: {{averageHours}}</li>
+        <li class="fix-pad"><a href="#" class="btn btn-floating" :class="{'pulse' : datas.newTask, 'red' : datas.newTask}" @click="seenTask"><i class="material-icons">add_alert</i></a></li>
       </ul>
   </div>
   </nav>
@@ -35,7 +32,7 @@ export default {
     seenTask: function(){
       if(Store.datas.newTask === true){
         Store.datas.newTask = false;
-        Materialize.toast('Nouvelle tache: vue!', 2000)
+        Materialize.toast('Seen!', 2000)
           }
         },
 

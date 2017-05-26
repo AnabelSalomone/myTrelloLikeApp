@@ -10,8 +10,8 @@
     </li>
     </div>
 			<div class="col s1">
-     <a  @click="deleteTask(item)"><i class="tiny material-icons">delete</i></a>
-		 <a  @click="cacher(item)"><i class="tiny material-icons">remove_red_eye</i></a>
+     <a class="tooltipped" @click="deleteTask(item)" data-tooltip="Delete this task"><i class="tiny material-icons">delete</i></a>
+		 <a class="tooltipped" @click="cacher(item)" data-tooltip="Mark as 'important'"><i class="tiny material-icons">remove_red_eye</i></a>
     </div>
 		</ul>
 </div>
