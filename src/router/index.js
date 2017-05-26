@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Cache from '@/components/Cache'
-import Taches from '@/components/Taches'
+import Taches from '@/components/Tasks'
 
 Vue.use(Router)
 

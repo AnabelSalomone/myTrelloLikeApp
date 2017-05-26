@@ -1,7 +1,6 @@
 <template>
 <div>
-<div class="row">
-HIDDEN HERE 
+<div class="row"> 
 <div v-for="item in tasks.taches">
 <div v-if="item.visibilite === false">
       <div class="col s12 m3">

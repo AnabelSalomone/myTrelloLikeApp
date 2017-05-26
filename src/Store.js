@@ -1,36 +1,26 @@
 export const Store = {
-	// state: {
-	// 	tachesSup
-	// },
-
-	// mutations: {
-	// 	increment(state, value) {
-	// 		state.tachesSup += value;
-	// 	}
-	// },
-
 	datas: {
 		taches: [
 			{
-				titre: "Faire abc 1",
+				titre: "Call someone",
 				note: 8,
 				heures: 3,
 				visibilite: true
 			},
 			{
-				titre: "Faire dce 2",
+				titre: "Do something",
 				note: 6,
 				heures: 1,
 				visibilite: true
 			},
 			{
-				titre: "Faire fgh 3",
+				titre: "Finish something",
 				note: 3,
 				heures: 4,
 				visibilite: true
 			},
 			{
-				titre: "Faire ijk 4",
+				titre: "Start something new",
 				note: 6,
 				heures: 1,
 				visibilite: true
@@ -43,6 +33,22 @@ export const Store = {
 			}
 		],
 		tachesSup: 0,
-		newTask: false
+		newTask: false,
+		word: ''
+	},
+	search() {
+		let tab = [];
+		let reg = new RegExp(this.datas.word, "i");
+
+		if (this.datas.word.length >= 3) {
+			tab = this.datas.taches.filter((elt) => reg.test(elt.titre));
+		} else {
+			tab = this.datas.taches;
+		}
+
+		console.log(tab)
+
+		return tab;
+
 	}
 };

@@ -5,13 +5,14 @@
       <a href="#" class="brand-logo">My Trello-like</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>Hi, User! </li>
-        <li><a>{{datas.taches.length}} taches en cours</a></li>
-        <li><a>{{totalHours}} hours remaining</a></li>
-        <li><a>{{averageHours}} heures en moyenne</a></li>
-        <li><router-link to="/hidden">Taches cachées</router-link></li>
-        <li><a href="#" class="btn btn-floating" :class="{'pulse' : datas.newTask}" @click="seenTask"><i class="material-icons">add_alert</i></a></li>
+        <li class="fix-pad" v-if="mainScreen===true" @click="changeScreen"><router-link to="/hidden">Hidden tasks</router-link></li>
+        <li class="fix-pad" v-if="mainScreen===false" @click="changeScreen"><router-link to="/">All tasks</router-link></li>
+        <li class="fix-pad"><a href="#" class="btn btn-floating" :class="{'pulse' : datas.newTask}" @click="seenTask"><i class="material-icons">add_alert</i></a></li>
+        <li class="tab">{{datas.taches.length}} current tasks</li>
+        <li class="tab">Time remaining: {{totalHours}} hours </li>
+        <li class="tab">Average time: {{averageHours}}</li>
       </ul>
-    </div>
+  </div>
   </nav>
 </div>
 </template>
@@ -25,7 +26,8 @@ export default {
   name: 'myNavbar',
   data(){
     return{
-      datas: Store.datas
+      datas: Store.datas,
+      mainScreen: true
      }
   },
 
@@ -35,8 +37,18 @@ export default {
         Store.datas.newTask = false;
         Materialize.toast('Nouvelle tache: vue!', 2000)
           }
-        }
-      },
+        },
+
+    changeScreen: function(){
+      if (this.mainScreen === true){
+        return this.mainScreen = false;
+      } else{
+        return this.mainScreen = true;
+      }
+    }
+},
+
+
   computed: {
     totalHours: function(){
       let final = 0;
@@ -57,3 +69,11 @@ export default {
   } // ferme computed
 }
 </script>
+
+<style scoped>
+.fix-pad{
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 10px;
+}
+</style>

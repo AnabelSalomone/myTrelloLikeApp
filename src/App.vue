@@ -1,16 +1,26 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <my-form></my-form>
-    <router-view></router-view>
+    <div class="row">
+    <div class="col s12 m3">
+    <counter></counter>
+    <search></search>
+     <my-form></my-form>     
+     </div>
+     <div class="col s12 m9">
+     <router-view></router-view>
+    </div>
+   </div>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
-import Taches from '@/components/Taches'
+import Taches from '@/components/Tasks'
 import MyForm from '@/components/MyForm'
 import Cache from '@/components/Cache'
+import Counter from '@/components/Counter'
+import Search from '@/components/Search'
 import {Store} from '@/Store.js'
 import {Bus} from '@/Bus.js'
 
@@ -18,7 +28,7 @@ import {Bus} from '@/Bus.js'
 
 export default {
   name: 'app',
-  components: {navbar: Navbar,  myForm: MyForm},
+  components: {navbar: Navbar,  myForm: MyForm, taches: Taches, search: Search, counter: Counter},
    
 }
 </script>

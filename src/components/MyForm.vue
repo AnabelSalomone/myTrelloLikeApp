@@ -1,27 +1,26 @@
 <template>
-<div>
-
+<div class="container">
+<div class="subtitle">Add a new task:</div>
 <div class="row">
     <form class="col s12">
       <div class="row">
-        <div class="input-field col s4">
+        <div class="input-field col s12">
           <input id="nouvelle-tache" type="text" class="validate" v-model="newTask.titre">
-          <label for="nouvelle-tache">Nouvelle tache</label>
+          <label for="nouvelle-tache">Title</label>
         </div>
-        <div class="input-field col s4">
-          <input id="heures" type="number" class="validate" v-model="newTask.heures">
-          <label for="heures">N° d'heures</label>
+        <div class="input-field col s12">
+          <input id="heures" type="number" min="0" class="validate" v-model="newTask.heures">
+          <label for="heures"># of hours</label>
         </div>
-        <div class="input-field col s4">
-          <input id="note" type="number" class="validate" v-model="newTask.note">
+        <div class="input-field col s12">
+          <input id="note" type="number" min="0" class="validate" v-model="newTask.note">
           <label for="note">Note</label>
         </div>
       </div>
-					 <button class="btn" @click="addTask" type="button">Envoyer</button>   
+					 <button class="btn" @click="addTask" type="button">Send</button>   
 					  </form>
-  </div>
-	{{newTask.titre}}
-	</div>
+ </div>
+ </div>
 
 </template>
 
@@ -75,3 +74,13 @@ export default {
 
 }
 </script>
+
+<style scoped>
+
+.subtitle {
+  background-color: #333;
+  color: white;
+  margin-top: 20px;
+}
+
+</style>
